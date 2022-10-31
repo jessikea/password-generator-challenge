@@ -24,6 +24,17 @@ function generatePassword() {
     alert ("Number entered is not within required range for password length");
     return "";
   }
+
+  includeNumberChars= confirm ("confirm to include numbers in generated password"
+  );
+  includeUpperCaseChars= confirm ("confirm to include upper case characters in generated password"
+  ); 
+  includeLowerCaseChars= confirm ("confirm to include lower case characters in generated password"
+  ); 
+  includeSpecialChars= confirm ("confirm to include special characters in generated password"
+  );
+
+  }
 }
 
 
