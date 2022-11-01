@@ -31,7 +31,7 @@ function generatePassword() {
   }
 
   includeNumberChars= confirm ("Confirm to include numbers in generated password"
-  );
+  );  
   includeUpperCaseChars= confirm ("Confirm to include upper case characters in generated password"
   ); 
   includeLowerCaseChars= confirm ("Confirm to include lower case characters in generated password"
@@ -43,7 +43,18 @@ function generatePassword() {
     IncludeChars += numbers;
     passwordGenerated += randomizer(numbers);
   }
-
+  if (includeUpperCaseChars ) {
+    IncludeChars += upperCaseChars;
+    passwordGenerated += randomizer(upperCaseChars);
+  } 
+   if (includeLowerCaseChars) {
+    IncludeChars += lowerCaseChars;
+    passwordGenerated += randomizer(lowerCaseChars);
+  }
+  if (includeSpecialChars) {
+    IncludeChars += specialChars;
+    passwordGenerated += randomizer(specialChars);
+  }
   passwordGenerated += randomizer(
     IncludeChars, passwordLength - passwordGenerated.length
   );
