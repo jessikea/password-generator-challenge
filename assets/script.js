@@ -6,7 +6,7 @@ var upperCaseChars= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCaseChars= "abcdefghijklmopqrstuvwxyz";
 var specialChars= "!@#$%^&*()_+-=[];',./?><|:`~}{"
 
-
+// Function that will randomize characters 
 function randomizer(text, numbers = 1) {
   let randomString = "";
 
@@ -21,6 +21,7 @@ function generatePassword() {
   let IncludeChars = "";
   var passwordGenerated= "";  
 
+  // Prompts user to input a number from 1 to 128 for character limit
   let passwordLength = parseInt(
     prompt("Indicate length of password. Must be a minimum of 8 characters and a maximum of 128 characters")
   );
@@ -30,6 +31,7 @@ function generatePassword() {
     return "";
   }
 
+  //Prompts what user can include in their generated password
   includeNumberChars= confirm ("Confirm to include numbers in generated password"
   );  
   includeUpperCaseChars= confirm ("Confirm to include upper case characters in generated password"
@@ -39,6 +41,8 @@ function generatePassword() {
   includeSpecialChars= confirm ("Confirm to include special characters in generated password"
   );
 
+
+  // If characters are selected then they are run through the randomizer function that will randomize character outcomes
   if (includeNumberChars ) {
     IncludeChars += numbers;
     passwordGenerated += randomizer(numbers);
